@@ -36,7 +36,11 @@ ul, ol {
 p, figure {
     margin: 1em 0;
 }
-a img {
+a{
+    color: $main;
+} 
+
+img {
     border: none;
 }
 sup, sub {
