@@ -11,8 +11,8 @@
   margin: 10px;
   flex: 1 1 auto;
   width: calc(100% / 3);
-  @media (min-width: $cut) {
-    width: 100%;
+  @media only screen and (min-width: $cut) {
+    width: max-content;
   }
 }
 
