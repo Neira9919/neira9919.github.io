@@ -33,7 +33,7 @@
 
 <script>
   function movil(){
-    if (screen.width < 880){
+    if (screen.width < 550){
     let tech_div = document.getElementById('raiz').getElementsByClassName('aux');
       for (let index = 0; index < 3; index++) {
         tech_div[index].classList.remove("tech");
@@ -44,7 +44,7 @@
   window.onload = movil();
 
   window.onresize = function(){
-    if (screen.width > 880){
+    if (screen.width > 550){
       let tech_div = document.getElementById('raiz').getElementsByClassName('aux');
       for (let index = 0; index < 3; index++) {
         tech_div[index].style.cssText = '';
