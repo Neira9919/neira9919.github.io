@@ -2,15 +2,15 @@
   <h1> Sobre mi </h1>
   <p> {{site.user_description}} </p>
 </div>
-  <div class="user">
-     <div class="tech">
+  <div class="user" id="raiz">
+     <div class="tech aux">
       <h2>Diseño</h2>
       <i class="devicon-html5-plain-wordmark"></i>
       <i class="devicon-bootstrap-plain-wordmark colored"></i>
       <p>Diseño interfaces de usuario modernas y adaptables a multiples dispositivos con tecnologias actuales, que agilizan este proceso.
         Como TailwindCss y Bootstrap.</p>
     </div>
-    <div class="tech">
+    <div class="tech aux">
       <h2>Codigo</h2>
       <i class="devicon-javascript-plain colored"></i>
       <i class="devicon-laravel-plain-wordmark colored"></i>
@@ -19,7 +19,7 @@
         Entre ellos JS y PHP, junto a poderosos framework como laravel y livewireJS.
       </p>
     </div>
-    <div class="tech">
+    <div class="tech aux">
       <h2>Herramientas</h2>
       <i class="devicon-git-plain colored"></i>
       <i class="devicon-docker-plain colored"></i>
@@ -30,3 +30,29 @@
 <div class="user-details">
   <a class="project-link" href="{{ "/assets/img/SebastiánNeiraCVActual.pdf" | prepend: site.baseurl }}">Descarga mi CV Actual</a>
 </div>
+
+<script>
+  function movil(){
+    if (screen.width < 880){
+    let tech_div = document.getElementById('raiz').getElementsByClassName('aux');
+      for (let index = 0; index < 3; index++) {
+        tech_div[index].classList.remove("tech");
+        tech_div[index].style.cssText = '  margin: 10px; flex: 1 1 auto; width: 100%;';
+      }
+    }
+  }
+  window.onload = movil();
+
+  window.onresize = function(){
+    if (screen.width > 880){
+      let tech_div = document.getElementById('raiz').getElementsByClassName('aux');
+      for (let index = 0; index < 3; index++) {
+        tech_div[index].style.cssText = '';
+        tech_div[index].classList.remove("tech");
+        tech_div[index].classList.add("tech");
+      }
+  } else {
+    movil();
+  }
+}
+</script>
