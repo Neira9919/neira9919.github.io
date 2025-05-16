@@ -1,12 +1,12 @@
 # Site settings
 title: Sebastian Neira | Portafolio
-description: Portafolio de desarrollo web
+description: Portafolio de Sebastian Neira
 baseurl: "/"
 url: "http://neira9919.github.io"
 
 # User settings
 username: Sebastian Neira
-user_description: Hola! Mi nombre es Sebastian Neira, técnico en informatica, Analista Programador. Desarrollador Web Fullstack, adaptable y pro-activo, con dominio técnico en PHP, Python, Angular y bases de datos relacionales (MariaDB, SQL Server, SQLite). Experiencia en el mantenimiento de equipos, redes y servidores, gestión con CRM, SAP y Notion. Busco contribuir con mis habilidades y mi perfil resolutivo como Analista Programador.
+user_description: Hola! Mi nombre es Sebastian Neira, Técnico en Informatica, Analista Programador. Desarrollador Web Fullstack, adaptable y pro-activo, con dominio técnico en PHP, Python, Angular y bases de datos relacionales (MariaDB, SQL Server, SQLite). Experiencia en el mantenimiento de equipos, redes y servidores, gestión con CRM, SAP y Notion. Busco contribuir con mis habilidades y mi perfil resolutivo como Analista Programador.
 user_title: Web Programmer / Desarrollador Web
 email: neira9919@gamil.com
 twitter_username: lorem_ipsum
