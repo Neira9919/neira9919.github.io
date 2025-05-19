@@ -16,6 +16,9 @@
     </div>
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  <button id="botonMusica" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    ▶ Reproducir música
+  </button>
 </div>
 
 <audio id="musicaDeFondo" loop style="display:none;">
@@ -25,21 +28,18 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const musicaDeFondo = document.getElementById('musicaDeFondo');
+    const boton = document.getElementById('botonMusica');
     musicaDeFondo.volume = 0.2;
     // Función para iniciar la música tras la primera interacción
-    function iniciarMusica() {
-      musicaDeFondo.play().catch(e => {
-        console.warn('No se pudo iniciar la música:', e);
-      });
-      // Remover el listener después de la primera vez
-      window.removeEventListener('click', iniciarMusica);
-      window.removeEventListener('keydown', iniciarMusica);
-      window.removeEventListener('scroll', iniciarMusica);
-    }
 
-    // Escuchar la primera interacción
-    window.addEventListener('click', iniciarMusica);
-    window.addEventListener('keydown', iniciarMusica);
-    window.addEventListener('scroll', iniciarMusica);
+    boton.addEventListener('click', () => {
+      musicaDeFondo.play()
+        .then(() => {
+          boton.textContent = '⏸ Pausar música';
+        })
+        .catch(err => {
+          console.warn('Error al reproducir música:', err);
+        });
+    });
   });
 </script>
