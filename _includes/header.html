@@ -26,10 +26,20 @@
   document.addEventListener('DOMContentLoaded', function () {
     const musicaDeFondo = document.getElementById('musicaDeFondo');
     musicaDeFondo.volume = 0.2;
+    // Función para iniciar la música tras la primera interacción
+    function iniciarMusica() {
+      musicaDeFondo.play().catch(e => {
+        console.warn('No se pudo iniciar la música:', e);
+      });
+      // Remover el listener después de la primera vez
+      window.removeEventListener('click', iniciarMusica);
+      window.removeEventListener('keydown', iniciarMusica);
+      window.removeEventListener('scroll', iniciarMusica);
+    }
 
-    // Intentar reproducir
-    musicaDeFondo.play().catch((e) => {
-      console.warn('No se pudo reproducir automáticamente:', e);
-    });
+    // Escuchar la primera interacción
+    window.addEventListener('click', iniciarMusica);
+    window.addEventListener('keydown', iniciarMusica);
+    window.addEventListener('scroll', iniciarMusica);
   });
 </script>
