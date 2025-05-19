@@ -1,29 +1,35 @@
 <div id="particles-js">
   <div class="header">
-      <h1>
-        <span class="site-title">{{site.username}}</span>
-        <span class="site-description">{{site.user_title}}</span>
-      </h1>
-      <div class="header-icons">
-        <a aria-label="Mi Blog" href="https://neira9919.github.io/blog"><i class="icon fa fa-quote-right"></i></a>
-        <a aria-label="Mi Email" href="mailto:neira9919@gmail.com"><i class="icon fa fa-envelope"></i></a>
-        <a aria-label="Mi Github" target="_blank" href="https://github.com/Neira9919/"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
-      </div>
-      <div class="header-links">
-        <a class="link" href="#about" data-scroll>Sobre mi</a>
-        <a class="link" href="#projects" data-scroll>Proyectos</a>
-      </div>
+    <h1>
+      <span class="site-title">{{site.username}}</span>
+      <span class="site-description">{{site.user_title}}</span>
+    </h1>
+    <div class="header-icons">
+      <a aria-label="Mi Blog" href="https://neira9919.github.io/blog"><i class="icon fa fa-quote-right"></i></a>
+      <a aria-label="Mi Email" href="mailto:neira9919@gmail.com"><i class="icon fa fa-envelope"></i></a>
+      <a aria-label="Mi Github" target="_blank" href="https://github.com/Neira9919/"><i class="icon fa fa-github-alt"
+          aria-hidden="true"></i></a>
+    </div>
+    <div class="header-links">
+      <a class="link" href="#about" data-scroll>Sobre mi</a>
+      <a class="link" href="#projects" data-scroll>Proyectos</a>
+    </div>
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
 
-<audio id="musicaDeFondo" autoplay loop style="display:none;">
+<audio id="musicaDeFondo" loop style="display:none;">
   <source src="{{ '/assets/img/fondo.mp3' | prepend: site.baseurl }}" type="audio/mpeg">
 </audio>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const musicaDeFondo = document.getElementById('musicaDeFondo');
     musicaDeFondo.volume = 0.2;
+
+    // Intentar reproducir
+    musica.play().catch((e) => {
+      console.warn('No se pudo reproducir automáticamente:', e);
+    });
   });
 </script>
