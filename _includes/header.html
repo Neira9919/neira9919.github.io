@@ -16,7 +16,8 @@
     </div>
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
-  <button id="botonMusica" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <button id="botonMusica"
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background-color: #7740c0; color: white; border: none; border-radius: 8px; padding: 10px 16px; cursor: pointer;">
     ▶ Reproducir música
   </button>
 </div>
@@ -32,14 +33,23 @@
     musicaDeFondo.volume = 0.2;
     // Función para iniciar la música tras la primera interacción
 
+    let estaReproduciendo = false;
+
     boton.addEventListener('click', () => {
-      musicaDeFondo.play()
-        .then(() => {
-          boton.textContent = '⏸ Pausar música';
-        })
-        .catch(err => {
-          console.warn('Error al reproducir música:', err);
-        });
+      if (!estaReproduciendo) {
+        musica.play()
+          .then(() => {
+            estaReproduciendo = true;
+            boton.textContent = '⏸ Pausar música';
+          })
+          .catch(err => {
+            console.warn('Error al reproducir música:', err);
+          });
+      } else {
+        musica.pause();
+        estaReproduciendo = false;
+        boton.textContent = '▶ Reproducir música';
+      }
     });
   });
 </script>
